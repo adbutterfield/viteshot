@@ -15,22 +15,19 @@ const typescriptPlugin = typescript({
 
 export default [
   {
-    preserveModules: true,
     input: ["src/cli.ts"],
-    output: [{ dir: "dist/lib", format: "cjs" }],
+    output: [{ dir: "dist/lib", format: "cjs", preserveModules: true }],
     external: ["@svgr/core"],
     plugins: [typescriptPlugin, preserveShebangs()],
   },
   {
-    preserveModules: true,
     input: allFiles("shooters"),
-    output: [{ dir: "dist/shooters", format: "cjs" }],
+    output: [{ dir: "dist/shooters", format: "cjs", preserveModules: true }],
     plugins: [typescriptPlugin],
   },
   {
-    preserveModules: true,
     input: allFiles("renderers"),
-    output: [{ dir: "dist/renderers", format: "esm" }],
+    output: [{ dir: "dist/renderers", format: "esm", preserveModules: true }],
     plugins: [typescriptPlugin],
   },
 ];
