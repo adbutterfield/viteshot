@@ -1,10 +1,10 @@
 import percySnapshot from "@percy/puppeteer";
-import puppeteer from "puppeteer";
+import puppeteer, { Browser } from "puppeteer";
 import { Shooter } from "../src/config";
 
 export default (): Shooter => ({
   shoot: async (url) => {
-    let browser!: puppeteer.Browser;
+    let browser!: Browser;
     try {
       browser = await puppeteer.launch();
       const page = await browser.newPage();
