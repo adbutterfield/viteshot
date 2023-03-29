@@ -23,6 +23,11 @@ export async function startRenderer(options: {
     ignore: "**/node_modules/**",
     cwd: options.projectPath,
   });
+  if (!Array.isArray(relativeFilePaths)) {
+    throw new Error(
+      `Filepath pattern "${options.filePathPattern}" did not return an array`
+    );
+  }
   if (relativeFilePaths.length === 0) {
     throw new Error(
       `No files found matching pattern: ${options.filePathPattern}`
@@ -187,7 +192,7 @@ export async function startRenderer(options: {
           <script type="module" src="/__main__.tsx"></script>
           <script type="module" src="/__renderer__.tsx"></script>
         </body>
-      </html>    
+      </html>
       `
     );
     res.setHeader("Content-Type", "text/html");
