@@ -1,5 +1,4 @@
-// @ts-ignore untyped (pending https://github.com/gregberge/svgr/pull/555)
-import svgr from "@svgr/core";
+import { transform } from "@svgr/core";
 import * as esbuild from "esbuild";
 import fs from "fs-extra";
 import path from "path";
@@ -28,7 +27,7 @@ export function svgrPlugin(
         return;
       }
       const svg = await fs.readFile(filePath, "utf8");
-      const generatedSvgrCode: string = await svgr(
+      const generatedSvgrCode: string = await transform(
         svg,
         {},
         { componentName: "ReactComponent" }
