@@ -16,10 +16,10 @@
   "dependencies": {
     "@svgr/core": "^7.0.0",
     "assert-never": "^1.2.1",
-    "chalk": "^5.2.0",
+    "chalk": "^4.1.2",
     "connect": "^3.7.0",
     "fs-extra": "^11.1.1",
-    "get-port": "^6.1.2",
+    "get-port": "^5.1.1",
     "glob": "^9.3.2",
     "rollup-plugin-friendly-type-imports": "^1.0.1",
     "simple-git": "^3.17.0",
